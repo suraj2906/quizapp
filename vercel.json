@@ -3,11 +3,19 @@
         "src": "quiz_app/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    }],
+    },
+    {
+        "src": "quiz_app/frontend/**/*",
+        "use": "@vercel/static"
+      }],
     "routes": [
         {
             "src": "/(.*)",
             "dest": "quiz_app/wsgi.py"
-        }
+        },
+        {
+            "src": "/frontend/(.*)",
+            "dest": "/quiz_app/frontend/$1"
+          }
     ]
 }
