@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz App</h1>
+        <div id="quiz-section">
+            
+            <button id="start-btn">Start Quiz</button>
+
+           
+            <div id="question-container" style="display: none;">
+                <h2 id="question-text"></h2>
+                <div id="options-container"></div>
+                
+                <button id="next-btn" style="display: none;">Next Question</button>
+                
+                <button id="submit-btn" style="display: none;" disabled>Submit Answer</button>
+            </div>
+
+            
+            <div id="stats-container" style="display: none;">
+                <h3>Quiz Stats</h3>
+                <p>Total Questions: <span id="total-questions"></span></p>
+                <p>Correct Answers: <span id="correct-answers"></span></p>
+                <p>Incorrect Answers: <span id="incorrect-answers"></span></p>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
